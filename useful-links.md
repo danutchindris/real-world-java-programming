@@ -60,13 +60,16 @@
 - February 2020: https://blogs.oracle.com/javamagazine/february-2020-v2?source=:em:nw:mt::RC_WWMK190726P00001:NSL400004372
 
 ### JVM Stuff
+- Adopt OpenJDK: https://adoptopenjdk.net
 - GraalVM: https://www.graalvm.org
 - Jabel: https://bsideup.github.io/posts/graalvm_with_jabel/
 
 ### Reactive Programming
+- https://www.infoq.com/minibooks/emag-reactive-programming-java/
 - https://livebook.manning.com/book/functional-reactive-programming/chapter-1/23
 
 ### RESTful APIs
+- https://www.infoq.com/minibooks/spring-boot-building-api-backend/
 - https://blog.tratif.com/2017/11/23/effective-restful-search-api-in-spring/
 
 ### Various Java Resources
