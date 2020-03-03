@@ -15,6 +15,7 @@
 
 ### Concurrency
 - Actor Model: http://adit.io/posts/2013-05-15-Locks,-Actors,-And-STM-In-Pictures.html
+- https://channel9.msdn.com/Shows/Going+Deep/Hewitt-Meijer-and-Szyperski-The-Actor-Model-everything-you-wanted-to-know-but-were-afraid-to-ask
 - http://adit.io/posts/2013-05-11-The-Dining-Philosophers-Problem-With-Ron-Swanson.html
 - https://impurepics.com/tags/concurrency.html
 - http://armstrongonsoftware.blogspot.com/2006/09/why-i-dont-like-shared-memory.html
@@ -37,6 +38,8 @@
 ### Git
 - https://learngitbranching.js.org
 - http://adit.io/posts/2013-08-16-five-useful-git-tips.html
+- https://jeffkreeftmeijer.com/git-flow/
+- https://nvie.com/posts/a-successful-git-branching-model/
 
 ### Interviews
 - https://leetcode.com/explore/learn/
@@ -63,9 +66,13 @@
 ### Reactive Programming
 - https://livebook.manning.com/book/functional-reactive-programming/chapter-1/23
 
+### RESTful APIs
+- https://blog.tratif.com/2017/11/23/effective-restful-search-api-in-spring/
+
 ### Various Java Resources
 - https://github.com/pavansolapure/opencodez-samples
 - https://springframework.guru/blog/
+- https://www.freecodecamp.org/news/understanding-java-generic-types-covariance-and-contravariance-88f4c19763d2/?gi=ce4e2b26ccef
 
 ### UML
 - https://github.com/plantuml/plantuml
@@ -152,6 +159,7 @@
 
 ### Scala
 - https://hello-scala.com
+- https://www.tutorialspoint.com/scala/index.htm
 - http://alvinalexander.com
 - A Functional approach to reactive microservice architecture by Patrick Di Loreto & Jose Escanciano: https://www.youtube.com/watch?v=DzJa3CPS5vU
 - https://www.todaysoftmag.ro/article/2732/monad-transformers
