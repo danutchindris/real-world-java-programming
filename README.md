@@ -13,10 +13,11 @@
 - Git, Git Flow
 - testare unitara (JUnit, Mockito, JaCoCo)
 - arhitecturi bazate pe microservicii (Spring Boot)
-- deployment (Docker, Kubernetes, Apache Mesos)
+- deployment (Docker, Kubernetes, Apache Mesos, Puppet, Vagrant)
 - procesare big data (Apacha Spark)
 - monitorizare (Graphite, Grafana)
 - stream-uri reactive (Akka Streams, RxJava)
 - sisteme de mesaje distribuite (Apache Kafka)
+- full text search (Elasticsearch)
 - event sourcing, CQRS
 - etc.
