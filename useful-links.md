@@ -67,6 +67,7 @@
 ### Reactive Programming
 - https://www.infoq.com/minibooks/emag-reactive-programming-java/
 - https://livebook.manning.com/book/functional-reactive-programming/chapter-1/23
+- https://medium.com/metrosystemsro/reactive-microservices-in-practice-4de4e5155f5d
 
 ### RESTful APIs
 - https://www.infoq.com/minibooks/spring-boot-building-api-backend/
