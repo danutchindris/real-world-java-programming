@@ -1,4 +1,4 @@
-package com.skytravelr.service;
+package com.skytravelr;
 
 public class ForecastServiceTest {
 }
