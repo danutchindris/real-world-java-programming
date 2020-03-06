@@ -173,3 +173,7 @@
 ### Software Design
 - https://www.oreilly.com/radar/drivetrain-approach-data-products/
 - https://instagram-engineering.com/static-analysis-at-scale-an-instagram-story-8f498ab71a0c
+
+### Tools
+- https://www.gitignore.io
+- https://plantuml.com
