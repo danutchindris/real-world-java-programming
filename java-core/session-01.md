@@ -13,7 +13,7 @@
     - o instructiune care face ceva, dar nu returneaza o valoare
         - ex: `System.out.println("abc");`
         - nu putem asigna rezultatul unei variabile
-        - ex: `var x = System.out.println("abc") // nu putem face asta`
+        - ex: `var x = System.out.println("abc"); // nu putem face asta`
     - un apel de metoda care returneaza un `void` este un statement
 - expression
     - o instructiune care returneaza o valoare
@@ -44,7 +44,7 @@ Fie clasa `Order`, definita astfel:
        }
        // aici nu mai avem variable shadowing
        // putem accesa proprietatea 'price' care apartine clasei
-       public void setName(BigDecimal p) {
+       public void setPrice(BigDecimal p) {
           price = p;
        }
     }
