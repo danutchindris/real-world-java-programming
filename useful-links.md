@@ -37,6 +37,7 @@
 
 ### Git
 - https://learngitbranching.js.org
+- https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
 - http://adit.io/posts/2013-08-16-five-useful-git-tips.html
 - https://jeffkreeftmeijer.com/git-flow/
 - https://nvie.com/posts/a-successful-git-branching-model/
