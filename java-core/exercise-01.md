@@ -5,6 +5,13 @@ Sa se determine caracterele unice din `String` si frecventa lor.
 De exemplu, pentru input-ul "abracadabra", output-ul va fi un `String` "a5b2r2c1d1".
 Caracterele vor fi prezente in output in ordinea primei lor aparitii in input, deci nu in ordine alfabetica.
 
+Cu alte cuvinte, trebuie sa determinam ce litere exista in `String`-ul de intrare si sa numaram de cate ori apare fiecare.
+Pentru simplitate, consideram ca input-ul contine doar litere mici.
+Output-ul va fi un `String` care contine literele gasite, grupate cu numarul lor de aparitii.
+Un alt exemplu:
+- input: "paralelipiped"
+- output: "p3a2r1l2e2i2d1" 
+
 Constrangeri: putem folosi doar *array*-uri (nu `List` si implementarile acestuia; nici un alt tip de `Collection`).
 
 Incercam sa gasim un algoritm cat mai optim ca timp de executie si spatiu de memorie folosit.
