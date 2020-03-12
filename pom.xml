@@ -15,6 +15,7 @@
 
     <modules>
         <module>java-core</module>
+        <module>teo</module>
     </modules>
 
     <properties>
