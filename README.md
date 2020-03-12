@@ -11,6 +11,7 @@
 - algoritmi (sortare, cautare, grafuri, etc.)
 - tehnici de programare (recursivitate, memoizare, divide et impera, programare dinamica, etc.)
 - design patterns
+- complexitatea algoritmilor (Big O notation)
 
 ### Alte obiective:
 - Git, Git Flow
