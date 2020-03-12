@@ -121,6 +121,27 @@ In contrast a relation defined for all the elements of the domain is called a *t
 Many bugs are a result of using partial functions as if they were total functions.
 Turning partial functions into total functions is an important part of functional programming.
 
+#### Examples
+
+Are These Partial or Total Functions? If they are partial functions, how can we turn them into
+total functions? 
+
+###### Example 1
+
+    f: N -> N
+    f(x)=x-1
+
+###### Example 2
+
+    f: N -> N
+    f(x)=x+1
+
+###### Example 3
+
+    String getEquipmentDescription(final Person p) {
+       return p.getEquipment().getDescription();
+    }
+
 ## Referential Transparency
 
 ## Function Composition
