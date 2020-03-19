@@ -5,9 +5,9 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.skytravelr</groupId>
-    <artifactId>parent</artifactId>
+    <artifactId>real-world-java-programming</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <name>parent</name>
+    <name>real-world-java-programming</name>
     <packaging>pom</packaging>
 
     <modules>
