@@ -42,12 +42,20 @@
 - http://adit.io/posts/2013-08-16-five-useful-git-tips.html
 - https://jeffkreeftmeijer.com/git-flow/
 - https://nvie.com/posts/a-successful-git-branching-model/
+- https://www.freecodecamp.org/news/the-beginners-guide-to-git-github/
 
 ### Interviews
 - https://leetcode.com/explore/learn/
 - https://www.interviewbit.com/practice/
 - https://www.codechef.com
 - https://leetfree.com/
+
+### Java Core
+- https://airbrake.io/blog/java-exception-handling/the-java-exception-class-hierarchy
+- Records:
+    - https://www.infoq.com/articles/java-14-feature-spotlight/
+    - https://blogs.oracle.com/javamagazine/records-come-to-java?source=:em:nw:mt::RC_WWMK190726P00001:NSL400023813
+    - https://dzone.com/articles/java-records-a-closer-look
 
 ### Java Features
 - JDK 8: https://openjdk.java.net/projects/jdk8/
