@@ -6,6 +6,7 @@
     * [Exercise 1 (Arrays, Strings)](#exercise-1-arrays-strings)
     * [Exercise 2 (Numere perfecte)](#exercise-2-numere-perfecte)  
     * [Exercise 3 (Moving Average from Data Stream)](#exercise-3-moving-average-from-data-stream)
+    * [Exercise 4 (Palindrome Permutation)](#exercise-4-palindrome-permutation)
 
 ## Exercise 1 (Arrays, Strings)
 
@@ -66,3 +67,13 @@ Taken from [Wikipedia](https://en.wikipedia.org/wiki/Moving_average):
 >Given a series of numbers and a fixed subset size, the first element of the moving average is obtained
 >by taking the average of the initial fixed subset of the number series. Then the subset is modified
 >by "shifting forward"; that is, excluding the first number of the series and including the next value in the subset.
+
+## Exercise 4 (Palindrome Permutation)
+
+Given a string, determine if a permutation of the string could form a palindrome.
+
+For example,
+
+`"code"` -> False  
+`"aab"` -> True  
+`"carerac"` -> True
