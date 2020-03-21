@@ -159,6 +159,12 @@
 - https://www.toptal.com/phoenix/phoenix-rails-like-framework-web-apps
 - https://www.toptal.com/elixir/process-oriented-programming-elixir-and-otp
 - https://www.theerlangelist.com/article/why_elixir
+- https://github.com/itsgreggreg/elixir_quick_reference
+- https://github.com/christopheradams/elixir_style_guide
+- https://github.com/rrrene/credo
+- http://elixirstatus.com
+- https://podcast.smartlogic.io/s3e17-juric
+- http://elixir-recipes.github.io
 
 ### Functional Programming
 - Does FP Help in Production?: https://www.youtube.com/watch?v=Epd2r2-dftY
@@ -179,6 +185,7 @@
 - https://www.todaysoftmag.ro/article/2732/monad-transformers
 - https://dev.to/avremel/scala---on-classes--objects-3jij
 - https://www.toptal.com/scala/why-should-i-learn-scala
+- http://systemfw.org/talks.html
 
 ### Software Design
 - https://www.oreilly.com/radar/drivetrain-approach-data-products/
