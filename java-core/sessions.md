@@ -1,4 +1,13 @@
-# Sesiunea 1
+# Sesiuni
+
+## Cuprins
+
+  * [Sesiuni](#sesiuni)
+    * [Sesiunea 1 (7 martie 2020)](#sesiunea-1-7-martie-2020)
+    * [Sesiunea 2 (12 martie 2020)](#sesiunea-2-12-martie-2020)
+    * [Sesiunea 3 (21 martie 2020 - Skype)](#sesiunea-3-21-martie-2020---skype)
+
+## Sesiunea 1 (7 martie 2020)
 
 ### Stiluri de programare
 - programare imperativa
@@ -103,25 +112,6 @@ Caracteristici:
          System.out.println(order.getPrice());
       });
 
+## Sesiunea 2 (12 martie 2020)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+## Sesiunea 3 (21 martie 2020 - Skype)
