@@ -23,7 +23,7 @@ public class ParametersPassedByValue {
         return new Number(a.getNumber() + b.getNumber());
     }
 
-    public static int sumWithPrimitives(int x, int y) {
+    public static int sumWithPrimitivesReassigningParametersValues(int x, int y) {
         // having a method which takes parameters with primitive types
         // let's see what happens when we reassign other values
         // to the method's parameters
@@ -38,17 +38,18 @@ public class ParametersPassedByValue {
         int y = 5;
         // x and y are variables whose types are "primitive" types
 
-        System.out.println("--- start: before calling sumWithPrimitives ---");
+        System.out.println("\n--- start: before calling sumWithPrimitivesReassigningParametersValues ---");
         System.out.println("x = " + x);
         System.out.println("y = " + y);
-        System.out.println("--- end: before calling sumWithPrimitives ---");
+        System.out.println("--- end: before calling sumWithPrimitivesReassigningParametersValues ---\n");
 
-        System.out.println("x + y = " + sumWithPrimitives(x, y) + "(sumWithPrimitives)");
+        System.out.println("x + y = " + sumWithPrimitivesReassigningParametersValues(x, y) +
+                " (sumWithPrimitivesReassigningParametersValues)\n");
 
         System.out.println("--- start: after calling sumWithPrimitives ---");
         System.out.println("x = " + x);
         System.out.println("y = " + y);
-        System.out.println("--- end: after calling sumWithPrimitives ---");
+        System.out.println("--- end: after calling sumWithPrimitives ---\n");
 
         Number u = new Number(6);
         Number v = new Number(7);
@@ -58,15 +59,15 @@ public class ParametersPassedByValue {
         System.out.println("--- start: before calling sumWithObjectReferencesByReassigningParameters ---");
         System.out.println("u.number = " + u.getNumber());
         System.out.println("v.number = " + v.getNumber());
-        System.out.println("--- end: before calling sumWithObjectReferencesByReassigningParameters ---");
+        System.out.println("--- end: before calling sumWithObjectReferencesByReassigningParameters ---\n");
 
         System.out.println("u + v = " + sumWithObjectReferencesByReassigningParameters(u, v).getNumber() +
-                "(sumWithObjectReferencesByReassigningParameters)");
+                " (sumWithObjectReferencesByReassigningParameters)\n");
 
         System.out.println("--- start: after calling sumWithObjectReferencesByReassigningParameters ---");
         System.out.println("u.number = " + u.getNumber());
         System.out.println("v.number = " + v.getNumber());
-        System.out.println("--- end: after calling sumWithObjectReferencesByReassigningParameters ---");
+        System.out.println("--- end: after calling sumWithObjectReferencesByReassigningParameters ---\n");
 
         Number p = new Number(6);
         Number q = new Number(7);
@@ -74,15 +75,15 @@ public class ParametersPassedByValue {
         System.out.println("--- start: before calling sumWithObjectReferencesChangingParameterState ---");
         System.out.println("p.number = " + p.getNumber());
         System.out.println("q.number = " + q.getNumber());
-        System.out.println("--- end: before calling sumWithObjectReferencesChangingParameterState ---");
+        System.out.println("--- end: before calling sumWithObjectReferencesChangingParameterState ---\n");
 
         System.out.println("p + q = " + sumWithObjectReferencesChangingParameterState(p, q).getNumber() +
-                "(sumWithObjectReferencesChangingParameterState)");
+                " (sumWithObjectReferencesChangingParameterState)\n");
 
         System.out.println("--- start: after calling sumWithObjectReferencesChangingParameterState ---");
         System.out.println("p.number = " + p.getNumber());
         System.out.println("q.number = " + q.getNumber());
-        System.out.println("--- end: after calling sumWithObjectReferencesChangingParameterState ---");
+        System.out.println("--- end: after calling sumWithObjectReferencesChangingParameterState ---\n");
     }
 }
 
