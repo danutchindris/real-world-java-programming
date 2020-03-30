@@ -6,6 +6,7 @@
     * [Sesiunea 1 (7 martie 2020)](#sesiunea-1-7-martie-2020)
     * [Sesiunea 2 (12 martie 2020)](#sesiunea-2-12-martie-2020)
     * [Sesiunea 3 (21 martie 2020 - Skype)](#sesiunea-3-21-martie-2020---skype)
+    * [Sesiunea 4 (28 martie 2020 - Skype)](#sesiunea-4-28-martie-2020---skype)
 
 ## Sesiunea 1 (7 martie 2020)
 
@@ -115,3 +116,93 @@ Caracteristici:
 ## Sesiunea 2 (12 martie 2020)
 
 ## Sesiunea 3 (21 martie 2020 - Skype)
+
+## Sesiunea 4 (28 martie 2020 - Skype)
+
+### Clase anonime
+
+#### Flavour #1: Anonymous subclass of a specified class type
+
+Sa presupunem ca avem o clasa `Food` definita astfel:
+
+      class Food implements Eatable {
+      
+          @Override
+          public String serve() {
+              return "food";
+          }
+      }
+      
+Daca avem nevoie de o subclasa a acesteia, in mod normal o extindem intr-o noua clasa, folosind cuvantul `extends`.
+Totusi, in cazul in care avem nevoie de o subclasa despre care stim ca nu va mai fi utila si in alte locuri,
+putem crea o implementare anonima, astfel:
+
+      // create an instance of an anonymous subclass of Food
+      final Food food = new Food() {
+
+          @Override
+          public String serve() {
+              return "new food";
+          }
+      };
+
+Atunci cand apelam `food.serve()`, valoarea returnata va fi `"new food"`, datorita polimorfismului dinamic. :)
+Intr-adevar, tipul variabilei `food` este`Food`, dar obiectul pe care il referentiaza este o instanta a clasei anonime
+ce extinde `Food`.
+Aici, cuvantul `extends` este implicit, dar noi stim ca aceasta clasa anonima extinde clasa `Food`. Deci,
+instanta clasei anonime, creata *in-place*, are o relatie de tipul *is-a* cu Food`.
+
+Scopul unei astfel de clase anonime este de a suprascrie (*override*) una sau mai multe dintre metodele superclasei.
+In cazul nostru, clasa anonima suprascrie metoda `serve()`.
+
+#### Flavour #2: Anonymous implementer of a specified interface type
+
+Similar primului caz, putem crea o clasa anonima care implementeaza o interfata *in-place*.
+De exemplu, avand interfata:
+
+      interface Eatable {
+      
+          String serve();
+      }
+
+putem crea o implementare anonima a acesteia, astfel:
+
+      final Eatable eatable = new Eatable() {
+      
+          @Override
+          public String serve() {
+              return "some food";
+          }
+      };
+
+La prima vedere, poate parea ciudat sa folosim cuvantul `new` impreuna cu numele unei interfete - `new Eatable()`.
+Mai mult decat atat, vedem ca am aplicat paranteze rotunde numelui interfetei - `Eatable()` -, ca si cand am apelat
+un constructor.
+
+Totusi, exprimarea este valida pentru ca, in continuare, am furnizat implementarea anonima a interfetei. Am facut
+lucrul acesta intre acolade. Aici observam caracterul punct-si-virgula dupa acolada de sfarsit, pentru ca este sfarsitul
+*statement*-ului inceput o data cu declaratia variabilei `eatable` - in Java fiecare statement trebuie terminat cu
+punct-si-virgula.
+
+Asadar, aici cuvantul `implements` este implicit, dar stim ca e vorba despre o implementare anonima a interfetei `Eatable`.
+Deci, cuvantul `new` il aplicam constructorului clasei anonime, constructor apelat prin `()`, prezente dupa `Eatable`,
+numele interfetei pe care o implementam aici. 
+
+O observatie ar fi ca o clasa anonima definita astfel nu poate implementa decat o interfata, cea numita in definitia clasei.
+Acest lucru e restrictiv, pentru ca o clasa definita in mod obisnuit - `class MyClass {...}` - poate implementa mai multe
+interfete. 
+
+#### Flavour #3: Argument-defined anonymous inner class
+
+De multe ori nu avem nevoie de o variabila care sa referentieze o instanta de clasa anonima. Asa ca definim clasa
+si o instantiem pe loc, acolo unde vrem s-o transmitem ca parametru unei metode.
+De exemplu, implementam ad-hoc interfata `Comparator`, instantiem clasa anonima si transmitem ca parametru
+aceasta instanta metodei `sort()`, astfel:
+
+      Collections.sort(Arrays.asList("ghi", "abc", "def"), new Comparator<String>() {
+
+          @Override
+          public int compare(String a, String b) {
+              return a.compareTo(b);
+          }
+      });
