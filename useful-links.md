@@ -63,6 +63,9 @@
 - JDK 10 - 14: https://openjdk.java.net/projects/jdk/
 - https://www.infoq.com/presentations/java-8-plus/
 - https://www.infoq.com/articles/upgrading-java-8-to-12/
+- JDK 14:
+    - https://www.infoq.com/articles/java-14-feature-spotlight/
+    - https://blogs.oracle.com/javamagazine/records-come-to-java?source=:em:nw:mt::RC_WWMK190726P00001:NSL400023813
 
 ### Java Magazine
 - October 2019: https://blogs.oracle.com/javamagazine/october-2019-v2?source=:em:nw:mt::RC_WWMK190726P00001:NSL400004372
@@ -118,6 +121,10 @@
 
 ### Development
 - https://dev.to/dechamp/25-years-of-coding-and-im-just-beginning-442n
+- https://www.regular-expressions.info/posixbrackets.html
+
+### Design Patterns
+- https://refactoring.guru/design-patterns/strategy/java/example
 
 ### Elixir
 - Agents: https://blog.codecentric.de/en/2016/04/elixir-where-is-your-state/
@@ -165,6 +172,14 @@
 - http://elixirstatus.com
 - https://podcast.smartlogic.io/s3e17-juric
 - http://elixir-recipes.github.io
+- https://www.deadcoderising.com/try-something-different-with-erlang/
+- https://exercism.io/blog/unicode-matching-in-elixir
+- https://www.bignerdranch.com/blog/elixir-and-unicode-part-1-unicode-and-utf-8-explained/
+- https://www.bignerdranch.com/blog/elixir-and-unicode-part-2-working-with-unicode-strings/
+- https://www.youtube.com/watch?v=DuMp3362MsA (Andrea Leopardi - Papers We Love - Elixir Edition)
+- https://blog.appsignal.com/2020/03/24/how-to-use-grpc-in-elixir.html
+- https://pattern-match.com/blog/2018/06/01/erlang-tracing-what-we-can-and-what-we-cannot-trace/
+- http://blog.patrikstorm.com/function-currying-in-elixir
 
 ### Functional Programming
 - Does FP Help in Production?: https://www.youtube.com/watch?v=Epd2r2-dftY
@@ -173,9 +188,25 @@
 - http://lambdaone.io/2019/09/06/zio-errors/
 - https://www.infoq.com/presentations/ai-ml-functional-programming/?itm_source=infoq&itm_medium=popular_widget&itm_campaign=popular_content_list&itm_content=
 - https://medium.com/wix-engineering/hangman-in-fp-scala-609e1eb8c733
+- https://torchgrowth.com/blog/what-is-functional-programming/
+
+### Golang
+- https://tour.golang.org/welcome/1
+
+### Markdown & Related
+- https://devblast.com/b/create-a-static-websiteblog-with-jekyll-and-github-pages
+- https://joearms.github.io/published/2013-03-28-jekyll-is-great.html
+- https://help.github.com/en/github/working-with-github-pages/adding-content-to-your-github-pages-site-using-jekyll
+
+### Microservices
+- https://martinfowler.com/articles/microservices.html
+
+### Misc
+- http://www.paulgraham.com/useful.html
 
 ### Programming Languages
 - Programming Language Foundations in Agda: https://plfa.github.io
+- https://crypto.stanford.edu/~blynn/lambda/
 
 ### Scala
 - https://hello-scala.com
@@ -186,6 +217,7 @@
 - https://dev.to/avremel/scala---on-classes--objects-3jij
 - https://www.toptal.com/scala/why-should-i-learn-scala
 - http://systemfw.org/talks.html
+- https://www.deadcoderising.com/concurrency-made-easy-with-scala-and-akka/
 
 ### Software Design
 - https://www.oreilly.com/radar/drivetrain-approach-data-products/
@@ -194,3 +226,4 @@
 ### Tools
 - https://www.gitignore.io
 - https://plantuml.com
+
