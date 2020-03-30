@@ -18,7 +18,7 @@
 - testare unitara (JUnit, Mockito, JaCoCo)
 - arhitecturi bazate pe microservicii (Spring Boot)
 - deployment (Docker, Kubernetes, Apache Mesos, Puppet, Vagrant)
-- procesare big data (Apacha Spark)
+- procesare big data (Apache Spark)
 - monitorizare (Graphite, Grafana)
 - stream-uri reactive (Akka Streams, RxJava)
 - sisteme de mesaje distribuite (Apache Kafka)
