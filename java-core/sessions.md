@@ -38,36 +38,40 @@
 
 Fie clasa `Order`, definita astfel:
 
-    class Order {
-       private String name;
-       private BigDecimal price;
+```java
+class Order {
+   private String name;
+   private BigDecimal price;
 
-       public String getName() {
-          return name;
-       }
-       // variable shadowing
-       public void setName(String name) {
-          this.name = name;
-       }
-       public BigDecimal getPrice() {
-          return price;
-       }
-       // aici nu mai avem variable shadowing
-       // putem accesa proprietatea 'price' care apartine clasei
-       public void setPrice(BigDecimal p) {
-          price = p;
-       }
-    }
+   public String getName() {
+      return name;
+   }
+   // variable shadowing
+   public void setName(String name) {
+      this.name = name;
+   }
+   public BigDecimal getPrice() {
+      return price;
+   }
+   // aici nu mai avem variable shadowing
+   // putem accesa proprietatea 'price' care apartine clasei
+   public void setPrice(BigDecimal p) {
+      price = p;
+   }
+}
 
-    ...
+...
 
-    List<Order> orders = new ArrayList<>();
+List<Order> orders = new ArrayList<>();
+```
 
 #### Metoda 1 - cu instructiune `for` clasica
 
-    for (int i = 0; i < orders.size(); i++) {
-       System.out.println(orders.get(i).getName());
-    }
+```java
+for (int i = 0; i < orders.size(); i++) {
+   System.out.println(orders.get(i).getName());
+}
+```
 
 Caracteristici:
 - exprimare imperativa
@@ -77,9 +81,11 @@ Caracteristici:
 
 #### Metoda 2 - cu instructiune `for` imbunatatita (enhanced `for` loop; aka "for-each")
 
-    for (Order o : orders) {
-       System.out.println(o.getName());
-    }
+```java
+for (Order o : orders) {
+   System.out.println(o.getName());
+}
+```
 
 Caracteristici:
 - stil cat de cat declarativ
@@ -88,7 +94,9 @@ Caracteristici:
 
 #### Metoda 3 - cu metoda `forEach` si expresii lambda
 
-    orders.forEach(order -> System.out.println(order.getName()));
+```java
+orders.forEach(order -> System.out.println(order.getName()));
+```
 
 Caracteristici:
 - exprimare concisa
@@ -100,7 +108,9 @@ Caracteristici:
 
 - daca voiam sa transmitem metodei `println` obiectul de tip `Order`, puteam scrie cu ajutorul unei *method reference*:
 
-      orders.forEach(System.out::println)
+```java
+orders.forEach(System.out::println)
+```
 
 - putem folosi *method references* doar in anumite situatii
 - *method references* reprezinta expresii lambda sub forma redusa
@@ -108,10 +118,12 @@ Caracteristici:
 
 - o expresie lambda care are corpul format din mai multe instructiuni trebuie scrisa cu acolade (ca orice bloc de instructiuni):
 
-      orders.forEach(order -> {
-         System.out.println(order.getName());
-         System.out.println(order.getPrice());
-      });
+```java
+orders.forEach(order -> {
+ System.out.println(order.getName());
+ System.out.println(order.getPrice());
+});
+```
 
 ## Sesiunea 2 (12 martie 2020)
 
@@ -125,26 +137,30 @@ Caracteristici:
 
 Sa presupunem ca avem o clasa `Food` definita astfel:
 
-      class Food implements Eatable {
-      
-          @Override
-          public String serve() {
-              return "food";
-          }
-      }
+```java
+class Food implements Eatable {
+
+  @Override
+  public String serve() {
+      return "food";
+  }
+}
+```
       
 Daca avem nevoie de o subclasa a acesteia, in mod normal o extindem intr-o noua clasa, folosind cuvantul `extends`.
 Totusi, in cazul in care avem nevoie de o subclasa despre care stim ca nu va mai fi utila si in alte locuri,
 putem crea o implementare anonima, astfel:
 
-      // create an instance of an anonymous subclass of Food
-      final Food food = new Food() {
+```java
+// create an instance of an anonymous subclass of Food
+final Food food = new Food() {
 
-          @Override
-          public String serve() {
-              return "new food";
-          }
-      };
+  @Override
+  public String serve() {
+      return "new food";
+  }
+};
+```
 
 Atunci cand apelam `food.serve()`, valoarea returnata va fi `"new food"`, datorita polimorfismului dinamic. :)
 Intr-adevar, tipul variabilei `food` este`Food`, dar obiectul pe care il referentiaza este o instanta a clasei anonime
@@ -160,20 +176,24 @@ In cazul nostru, clasa anonima suprascrie metoda `serve()`.
 Similar primului caz, putem crea o clasa anonima care implementeaza o interfata *in-place*.
 De exemplu, avand interfata:
 
-      interface Eatable {
-      
-          String serve();
-      }
+```java
+interface Eatable {
+
+  String serve();
+}
+```
 
 putem crea o implementare anonima a acesteia, astfel:
 
-      final Eatable eatable = new Eatable() {
-      
-          @Override
-          public String serve() {
-              return "some food";
-          }
-      };
+```java
+final Eatable eatable = new Eatable() {
+
+  @Override
+  public String serve() {
+      return "some food";
+  }
+};
+```
 
 La prima vedere, poate parea ciudat sa folosim cuvantul `new` impreuna cu numele unei interfete - `new Eatable()`.
 Mai mult decat atat, vedem ca am aplicat paranteze rotunde numelui interfetei - `Eatable()` -, ca si cand am apelat
@@ -199,10 +219,12 @@ si o instantiem pe loc, acolo unde vrem s-o transmitem ca parametru unei metode.
 De exemplu, implementam ad-hoc interfata `Comparator`, instantiem clasa anonima si transmitem ca parametru
 aceasta instanta metodei `sort()`, astfel:
 
-      Collections.sort(Arrays.asList("ghi", "abc", "def"), new Comparator<String>() {
+```java
+Collections.sort(Arrays.asList("ghi", "abc", "def"), new Comparator<String>() {
 
-          @Override
-          public int compare(String a, String b) {
-              return a.compareTo(b);
-          }
-      });
+  @Override
+  public int compare(String a, String b) {
+      return a.compareTo(b);
+  }
+});
+```
