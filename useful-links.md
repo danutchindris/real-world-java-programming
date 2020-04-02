@@ -127,9 +127,9 @@
 - https://refactoring.guru/design-patterns/strategy/java/example
 
 ### Elixir
-- Agents: https://blog.codecentric.de/en/2016/04/elixir-where-is-your-state/
+- https://blog.codecentric.de/en/2016/04/elixir-where-is-your-state/ (Agents)
 - https://howistart.org/posts/elixir/
-- Derek Banas - Elixir Tutorial: https://www.youtube.com/watch?v=pBNOavRoNL0
+- https://www.youtube.com/watch?v=pBNOavRoNL0 (Derek Banas - Elixir Tutorial)
 - https://www.poeticoding.com
 - https://leanpub.com/elixir-toyrobot
 - http://www.automatingthefuture.com/blog/2016/4/8/finding-the-needle-in-the-haystack-breadth-first-search
@@ -155,7 +155,7 @@
 - https://blog.appsignal.com/2018/06/12/elixir-alchemy-deconstructing-genservers.html?utm_source=email&utm_medium=BlogPost&utm_campaign=mailEA_dripwelcome
 - https://elixirschool.com/en/lessons/basics/collections/
 - https://joearms.github.io/#2016-03-13%20Calling%20Elixir%20from%20Erlang
-- The Soul of Erlang and Elixir: https://www.youtube.com/watch?v=JvBT4XBdoUE
+- https://www.youtube.com/watch?v=JvBT4XBdoUE (The Soul of Erlang and Elixir)
 - https://www.infoq.com/presentations/elixir-otp-concurrency/?itm_source=presentations_about_elixir&itm_medium=link&itm_campaign=elixir
 - https://www.youtube.com/channel/UCzSjVNydX-fmcesMH8ry2HQ/videos
 - https://mlsdev.com/blog/elixir-programming-facts-to-know-for-better-app-development
@@ -180,6 +180,10 @@
 - https://blog.appsignal.com/2020/03/24/how-to-use-grpc-in-elixir.html
 - https://pattern-match.com/blog/2018/06/01/erlang-tracing-what-we-can-and-what-we-cannot-trace/
 - http://blog.patrikstorm.com/function-currying-in-elixir
+- https://devhints.io/elixir (Elixir Cheatsheet)
+- https://learnxinyminutes.com/docs/elixir/
+- https://www.programming-idioms.org/
+- https://jeffkreeftmeijer.com/mix-proper/
 
 ### Functional Programming
 - Does FP Help in Production?: https://www.youtube.com/watch?v=Epd2r2-dftY
