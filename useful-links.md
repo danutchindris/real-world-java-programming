@@ -77,10 +77,13 @@
 - GraalVM: https://www.graalvm.org
 - Jabel: https://bsideup.github.io/posts/graalvm_with_jabel/
 
-### Reactive Programming
+### Reactive Systems & Reactive Programming
+- https://www.reactivemanifesto.org
 - https://www.infoq.com/minibooks/emag-reactive-programming-java/
 - https://livebook.manning.com/book/functional-reactive-programming/chapter-1/23
 - https://medium.com/metrosystemsro/reactive-microservices-in-practice-4de4e5155f5d
+- https://developer.ibm.com/series/reactive-in-practice/
+- https://github.com/RedElastic/reactive-stock-trader
 
 ### RESTful APIs
 - https://www.infoq.com/minibooks/spring-boot-building-api-backend/
@@ -185,6 +188,10 @@
 - https://www.programming-idioms.org/
 - https://jeffkreeftmeijer.com/mix-proper/
 
+### Event Storming & Domain-Driven Design
+- https://blog.redelastic.com/corporate-arts-crafts-modelling-reactive-systems-with-event-storming-73c6236f5dd7
+- https://developer.ibm.com/tutorials/reactive-in-practice-1/
+
 ### Functional Programming
 - Does FP Help in Production?: https://www.youtube.com/watch?v=Epd2r2-dftY
 - https://www.manning.com/books/grokking-functional-programming
@@ -230,4 +237,3 @@
 ### Tools
 - https://www.gitignore.io
 - https://plantuml.com
-
