@@ -187,6 +187,12 @@
 - https://learnxinyminutes.com/docs/elixir/
 - https://www.programming-idioms.org/
 - https://jeffkreeftmeijer.com/mix-proper/
+- https://akoutmos.com
+- https://gigalixir.readthedocs.io/en/latest/main.html
+- https://gigalixir.com
+
+### Erlang
+- https://blog.stenmans.org/theBeamBook/
 
 ### Event Storming & Domain-Driven Design
 - https://blog.redelastic.com/corporate-arts-crafts-modelling-reactive-systems-with-event-storming-73c6236f5dd7
@@ -211,6 +217,7 @@
 
 ### Microservices
 - https://martinfowler.com/articles/microservices.html
+- https://developers.soundcloud.com/blog/inside-a-soundcloud-microservice
 
 ### Misc
 - http://www.paulgraham.com/useful.html
@@ -218,6 +225,10 @@
 ### Programming Languages
 - Programming Language Foundations in Agda: https://plfa.github.io
 - https://crypto.stanford.edu/~blynn/lambda/
+
+### REST, gRPC, GraphQL, ProtoBuf
+- https://grpc.io/docs/guides/
+- https://developers.google.com/protocol-buffers/docs/javatutorial
 
 ### Scala
 - https://hello-scala.com
