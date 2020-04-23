@@ -8,6 +8,7 @@
     * [Sesiunea 3 (21 martie 2020 - Skype)](#sesiunea-3-21-martie-2020---skype)
     * [Sesiunea 4 (28 martie 2020 - Skype)](#sesiunea-4-28-martie-2020---skype)
     * [Sesiunea 5 (4 aprilie 2020 - Skype)](#sesiunea-5-4-aprilie-2020---skype)
+    * [Sesiunea 6 (12 aprilie 2020 - Skype)](#sesiunea-6-12-aprilie-2020---skype)
 
 ## Sesiunea 1 (7 martie 2020)
 
@@ -433,3 +434,5 @@ class Application {
 
 Scrie cateva teste unitare, folosind clasa `Pair<U, V>`, pentru a demonstra comportamentul acesteia atunci cand este
 parametrizata cu diferite tipuri.
+
+## Sesiunea 6 (12 aprilie 2020 - Skype)
