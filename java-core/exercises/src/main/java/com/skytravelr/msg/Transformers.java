@@ -13,18 +13,30 @@ public class Transformers {
         public String apply(Message message) {
             return message.text;
         }
+        // in Scala: def apply(message: Message): String = ???
     };
 
-    // TODO: please uncomment the grayed out lines in the unit tests
-    //  present in com.skytravelr.msg.TransformersTest
-    //  make sure to run the tests so that you validate your solution
-
-    // TODO: please implement the following transformers
-    //  first using anonymous classes and then using lambda expressions
-
     // the sender and receiver of an SMS are some constant values chosen by us
-    // static Transformer<SMS> toSMS = ...
+    static Transformer<SMS> toSMS = new Transformer<SMS>() {
+
+        @Override
+        public SMS apply(Message message) {
+            return new SMS(message.text, "Me", "You");
+        }
+    };
 
     // the sender of a Tweet is a constant value chosen by us
-    // static Transformer<Tweet> toTweet = ...
+    static Transformer<Tweet> toTweet = new Transformer<Tweet>() {
+
+        @Override
+        public Tweet apply(Message message) {
+            return new Tweet(message.text, "Me");
+        }
+    };
+
+    static Transformer<String> toStringLambda = msg -> msg.text;
+
+    static Transformer<SMS> toSMSLambda = msg -> new SMS(msg.text, "Me", "You");
+
+    static Transformer<Tweet> toTweetLambda = msg -> new Tweet(msg.text, "Me");
 }

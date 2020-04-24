@@ -18,15 +18,15 @@ public class TransformersTest {
     public void toSMS_shouldReturnTheSmsFromTheMessage() {
         Message message = new Message("Some Message");
         SMS expected = new SMS("Some Message", Constants.SENDER, Constants.RECEIVER);
-        //SMS actual = Transformers.toSMS.apply(message);
-        //assertEquals(expected, actual);
+        SMS actual = Transformers.toSMS.apply(message);
+        assertEquals(expected, actual);
     }
 
     @Test
     public void toTweet_shouldReturnTheTweetFromTheMessage() {
         Message message = new Message("Some Message");
         Tweet expected = new Tweet("Some Message", Constants.SENDER);
-        //Tweet actual = Transformers.toTweet.apply(message);
-        //assertEquals(expected, actual);
+        Tweet actual = Transformers.toTweet.apply(message);
+        assertEquals(expected, actual);
     }
 }
