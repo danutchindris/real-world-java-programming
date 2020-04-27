@@ -9,6 +9,7 @@
     * [Sesiunea 4 (28 martie 2020 - Skype)](#sesiunea-4-28-martie-2020---skype)
     * [Sesiunea 5 (4 aprilie 2020 - Skype)](#sesiunea-5-4-aprilie-2020---skype)
     * [Sesiunea 6 (12 aprilie 2020 - Skype)](#sesiunea-6-12-aprilie-2020---skype)
+    * [Sesiunea 7 (26 aprilie 2020 - Skype)](#sesiunea-7-26-aprilie-2020---skype)
 
 ## Sesiunea 1 (7 martie 2020)
 
@@ -436,3 +437,144 @@ Scrie cateva teste unitare, folosind clasa `Pair<U, V>`, pentru a demonstra comp
 parametrizata cu diferite tipuri.
 
 ## Sesiunea 6 (12 aprilie 2020 - Skype)
+
+### Baze de numeratie
+
+### Code points
+
+### Type inference
+
+### Clase anonime si expresii lambda
+
+## Sesiunea 7 (26 aprilie 2020 - Skype)
+
+### Discutie quiz
+
+- Quiz 1 - programare declarativa vs. programare imperativa
+- http://www.quiz-maker.com/Q4LFA5I
+
+#### Parcurgerea unei liste
+
+Daca avem o lista cu elemente de tip `String`, declarata astfel
+
+```java
+List<String> xs = new ArrayList<>();
+```
+
+putem sa o parcurgem in mai multe moduri. Aceste modalitati de a descrie parcurgerea listei se impart in doua categorii: imperativ si declarativ.
+Sa presupunem ca vrem sa o parcurgem si sa afisam fiecare element:
+
+- in stil imperativ
+
+```java
+for (int i = 0; i < xs.size(); i++) {
+  System.out.println(xs.get(i));
+}
+
+// sau
+
+int i = 0;
+while (i < xs.size()) {
+  System.out.println(xs.get(i));
+  i++;
+}
+```
+
+- in stil declarativ
+
+```java 
+for (String x: xs) {
+  System.out.println(x);
+}
+
+// sau
+
+xs.forEach(x -> System.out.println(x));
+
+// sau
+
+// implementare echivalenta, folosind "method reference"
+xs.forEach(System.out::println);
+```
+
+Instructiunea "enhanced for", cunoscuta si sub numele de "for-each", ne permite sa descriem parcurgerea intr-un mod declarativ. Putem spune acest lucru fiindca nu mai gestionam noi iterarea propriu-zisa.
+
+Totusi, putem abstractiza si mai mult, folosind metoda `forEach`.
+
+Metoda `forEach` primeste ca parametru o implementare de `Consumer<T>`, mai exact `Consumer<String>` in cazul nostru.
+Interfata `Consumer<T>` expune o singura metoda abstracta, `void accept(T t)`, deci este o interfata functionala.
+Acest lucru inseamna ca, acolo unde se asteapta un obiect al unui tip ce implementeaza `Consumer<T>`, putem scrie o expresie lambda sau un *method reference*.
+
+In esenta, metoda `forEach` face urmatorul lucru:
+
+```java
+for (T t : this) {
+  action.accept(t);
+}
+```
+
+unde `action` este parametrul de tip `Consumer<T>`, transmis metodei.
+
+### Interfete functionale - Consumer<T>
+
+`Consumer<T>` expune o metoda abstracta ce primeste o valoare si returneaza un `void`. Asta inseamna ca o operatie de tip consumer e folosita pentru *efectele* sale.
+
+In cazul *stream*-urilor ce reprezinta colectii, metodele ce primesc un `Consumer<T>` ca parametru se numesc __operatii terminale__. Spunem acest lucru fiindca aceste operatii nu returneaza un nou *stream* pe care sa-l putem folosi mai departe.
+
+*Stream*-urile ne pun la dispozitie mai multe metode cu ajutorul carora putem obtine o noua colectie, bazata pe transformari aduse colectiei initiale.
+Aceste metode primesc ca parametri functii (sub forma unor expresii lambda sau, altfel spus, implementari ale unor *interfete functionale*) si returneaza un nou *stream*, o valoare, sau un `void`.
+
+Cateva exemple de metode ce returneaza un nou *stream* ar fi `map` (care primeste ca parametru un `Supplier<T>`), `flatMap` sau `filter` (care primeste ca parametru un `Predicate<T>`).
+Acestea se numesc __operatii intermediare__.
+
+Pe de alta parte, metode precum `forEach` (aceasta primeste ca parametru un `Consumer<T>`) nu returneaza un nou *stream*, deci sunt __operatii terminale__.
+
+Putem adauga faptul ca operatiile intermediare sunt *lazy*, adica nu sunt executate imediat.
+In schimb, majoritatea operatiilor terminale sunt *eager*, adica sunt executate pe loc.
+
+### Method references
+
+Sa ne uitam din nou la exemplul parcurgerii unei liste cu ajutorul metodei `forEach`:
+
+```java
+List<String> xs = new ArrayList<>();
+xs.forEach(x -> System.out.println(x));
+```
+
+Stim ca aceasta metoda primeste ca parametru un `Consumer<T>`. In exemplul nostru, avem de-a face cu un `Consumer<String>`, fiindca avem o lista de `String`-uri.
+
+Daca ne uitam la metoda abstracta expusa de interfata functionala, aceasta ar avea urmatoarea semnatura:
+
+```java
+void accept(String s);
+``` 
+
+Acest contract este respectat de expresia lambda transmisa ca parametru metodei `forEach`: ea primeste ca parametru un `String` si returneaza un `void` (fiindca rezultatul apelului `System.out.println(x)` este un `void`).
+
+Exista anumite situatii in care putem inlocui expresia lambda cu o constructie echivalenta, numita *method reference*.
+Un astfel de *method reference* e un nume de metoda pe care-l transmitem ca implementare a interfetei functionale asteptate.
+Exemplul nostru ar putea fi rescris cu *method reference* astfel:
+
+```java
+xs.forEach(System.out::println);
+```
+
+Vedem ca *method reference* are o sintaxa aparte, folosind operatorul `::`.
+
+Trebuie sa observam ca, atunci cand am transmis metodei `forEach` numele `println` ca parametru, nu am apelat metoda `println` (lucru indicat de lipsa parantezelor rotunde).
+Am transmis comportamentul lui `println`, sa fie folosit de catre `forEach`. E responsabilitatea lui `forEach` sa aplice acest comportament (adica sa apeleze efectiv metoda `println`).
+
+Sa vedem de ce putem folosi acest *handler* al metodei `println` in locul expresiei lambda anterioare.
+`out` este un membru de tip `PrintStream` al clasei `System`. Deci trebuie sa ne uitam la API-ul clasei `PrintStream` pentru a vedea semnatura metodei `println`.
+Aceasta e o metoda supraincarcata (*overloaded*), avand mai multe implementari, pentru diverse tipuri de parametri. Pe noi ne intereseaza acum metoda cu semnatura:
+
+```java
+void println(String x);
+```
+
+Deci vedem ca `println` este o metoda ce primeste ca parametru un `String` si returneaza un `void`.
+E exact ceea ce face si expresia lambda `x -> System.out.println(x)`, care ia un `String` si il transforma intr-un `void`.
+Mai mult, e exact semnatura metodei abstracte `accept` din `Consumer<String>`.
+De aceea, putem substitui expresia lambda prin numele metodei.
+Atentie, nu substituim expresia lambda cu apelul metodei, ci cu numele ei; fiindca apelul metodei da ca rezultat un `void`, dar noi avem nevoie de o functie de la `String` la `void` aici.
+Adica avem nevoie de comportamentul functiei, nu de rezultatul aplicarii ei.
