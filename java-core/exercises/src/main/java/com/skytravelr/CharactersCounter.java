@@ -3,7 +3,7 @@ package com.skytravelr;
 /**
  * # Exercise 1 - arrays, Strings
  */
-public class Exercise01 {
+public class CharactersCounter {
 
     public static void main(String[] args) {
         final String input = "paralelipiped";
