@@ -230,3 +230,138 @@ pe disc pana la radacina proiectului creat la pasul anterior.
    de sub ramura `test/java` a proiectului Maven.
    Decomenteaza liniile comentate din aceasta clasa de test si ruleaza testele unitare fie din IDE, fie
    din linie de comanda, cu ajutorul comenzii `mvn test`.
+
+## Exercise 6 (The Consumer<T> Functional Interface)
+
+### Context
+
+Divizia *clothing* a companiei noastre, __SkyTravelr Fashion__, a lansat de curand un portal online de prezentare pentru articole de imbracaminte unicat, apartinand unor designeri celebri.
+
+Acest portal este un complement al noului nostru concept de magazin premium, Aplicatia permite clientelei noastre selecte sa vizualizeze gama de articole achizitionata de magazinul nostru.
+
+O clienta ce foloseste aplicatia poate rezerva anumite articole si programa o sedinta de proba. Pe baza acestei programari, consultantii nostri o vor astepta in magazin, avand articolele pregatite pentru a-i oferi o experienta de *shopping* cat mai placuta.
+
+Conceptul a avut un succes atat de mare, incat managementul magazinului a achizitionat un numar mare de articole. Fiind articole unicat de mare valoare, acestea nu sunt expuse in magazin, ci sunt sunt depozitate in conditii speciale, urmand o procedura standard.
+
+Atunci cand proceseaza o programare si se pregatesc sa lucreze cu o clienta, consultantii nostri au nevoie de rapoarte ale articolelor rezervate, in diverse formate:
+- informatii pentru regasirea articolelor in depozit
+- informatii despre fiecare articol din rezervare, astfel incat consultantul sa-i poata oferi detalii de specialitate clientului
+
+### Problema tehnica
+
+Inginerii nostri trebuie sa implementeze o solutie flexibila astfel incat sistemul sa poata lucra cu orice tip de raport ar fi necesar. Managementul se asteapta ca, in viitorul apropiat, sa fie nevoie de noi tipuri de rapoarte.
+
+Echipa de dezvoltare a decis sa foloseasca expresii lambda, cu ajutorul carora se poate configura comportamentul generatorului de rapoarte, in functie de nevoia utilizatorului.
+
+Inainte de a implementa aceasta solutie in aplicatia de productie, ai fost aleasa din echipa de ingineri pentru a implementa un *POC* (*proof of concept*), printr-o aplicatie simpla in linie de comanda.
+
+Aplicatia primeste ca *input* o lista de articole si un tip de raport ce trebuie generat. In functie de tipul de raport cerut, aplicatia alege comportamentul corespunzator, implementat cu o expresie lambda. O expresie lambda, in aplicatia noastra, trebuie sa genereze sumarul pentru un articol. Apoi aceasta expresie va fi apelata pentru fiecare articol in parte.
+
+Lista de articole si functia de generare pentru un articol (expresia lambda) sunt transmise algoritmului comun de generare. Acesta doar parcurge lista si aplica functia fiecarui element.
+
+### Detalii
+
+Un articol este modelat printr-o clasa `Article` ce are mai multe proprietati:
+
+- barcode: Long
+- name: String
+- description: String
+- designer: String
+- price: BigDecimal
+- location: Location
+
+Tipul `Location` este o alta clasa, cu urmatoarele proprietati:
+- warehouse: String
+- rack: String
+
+Metoda de generare are urmatoarea semnatura:
+
+`static void generate(List<Article>, Consumer<Article> reporter)`
+
+### Sugestii
+
+- studiaza interfata functionala `Consumer<T>`; acorda atentie semnaturii metodei abstracte declarate de interfata, pentru a sti cum trebuie sa arate fiecare expresie lambda (ce "intra" si ce "iese" sau altfel spus, ce e in stanga sagetii "->" si ce e in dreapta ei)
+
+- ar fi bine ca aplicatia sa fie construita cu ajutorul unui proiect Maven, plecand de la urmatorul `pom.xml`:
+
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>my-group-id</groupId>
+    <artifactId>my-artifact-id</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>my-project-name</name>
+    <packaging>jar</packaging>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.2.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <compilerArgs>
+                        <arg>-parameters</arg>
+                    </compilerArgs>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.19.1</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.junit.platform</groupId>
+                        <artifactId>junit-platform-surefire-provider</artifactId>
+                        <version>1.1.0</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.junit.jupiter</groupId>
+                        <artifactId>junit-jupiter-engine</artifactId>
+                        <version>5.1.0</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+</project>
+```
+
+- metoda `main` va folosi cel putin doua expresii lambda, ce definesc comportamentul pentru tipurile de rapoarte:
+
+```java
+public static void main(String[] args) {
+  // ...
+
+  // build article list
+
+  // write the lambda expressions
+  // each lambda expression should take the article as parameter and, for body, just take the appropriate information from the article and print it to the console
+  Consumer<Article> warehouseReporter = // ... -> ...
+  Consumer<Article> detailedReporter = // ... -> ...
+
+  // call the generate() method passing the list and the variable referencing a lambda expression
+
+  // ...
+}
+
+static void generate(List<Article>, Consumer<Article> reporter) {
+  // ...
+}
+```
+
+Nota: desi designul propus nu prea respecta unele principii despre care am discutat pana acum (faptul ca o metoda ar trebui sa returneze, pe cat posibil, o valoare si nu un `void`), scopul exercitiului este sa ne obisnuim sa lucram cu `Consumer<T>`, care este o interfata pe care o folosim pentru efectele ei; in cazul nostru, efectul ar fi afisarea pe ecran.
