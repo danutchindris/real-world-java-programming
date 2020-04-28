@@ -238,7 +238,7 @@ Collections.sort(Arrays.asList("ghi", "abc", "def"), new Comparator<String>() {
 
 #### Motivatie si utilizare
 
-Tipurile generice au fost introduse in limbajul Java la versiunea 6 si ne permit sa parametrizam interfete si clase.
+Tipurile generice au fost introduse in limbajul Java la versiunea 5 si ne permit sa parametrizam interfete si clase.
 De obicei, parametrizam tipuri care modeleaza un fel de container, adica inglobeaza alte tipuri.
 Cele mai reprezentative tipuri care folosesc *generics* sunt colectiile. Un alt exemplu relevant este `Optional<T>`,
 deoarece acesta modeleaza ideea de a ingloba o valoare care poate fi prezenta sau absenta.
@@ -307,7 +307,7 @@ Totusi, trebuie sa remarcam ca aceste parametrizari prin intermediul tipurilor g
 de compilare. Dupa ce codul sursa este compilat in *bytecode*, toate aceste parametrizari sunt sterse de catre
 compilator, printr-un proces numit *type erasure*. Acest lucru se face pentru compatibilitatea cu versiunile anterioare
 ale platformei, cand nu existau tipuri generice. Astfel, un program compilat cu un compilator de versiune mai mica decat
-6, va putea fi rulat si intr-un JVM de versiune 8, de exemplu.
+5, va putea fi rulat si intr-un JVM de versiune 8, de exemplu.
 
 Un alt lucru interesant il observam la instantierea unei clase parametrizate cu tipuri generice, prin notatia numita
 *diamond syntax*:
@@ -316,7 +316,7 @@ Un alt lucru interesant il observam la instantierea unei clase parametrizate cu 
 List<String> list = new ArrayList<>();
 ```
 
-Cand au fost introduse genericele in Java 6, trebuia sa folosim notatia completa `new ArrayList<String>()` in dreapta
+Cand au fost introduse genericele in Java 5, trebuia sa folosim notatia completa `new ArrayList<String>()` in dreapta
 operatorului de asignare. Totusi, in Java 7 s-a introdus un mecanism de *type inference*. Compilatorul "se uita"
 in partea stanga, la tipul declarat al variabilei, si isi da seama ce parametrizare asteptam si in partea dreapta a
 semnului egal. Aici avem o constrangere, prin faptul ca tipurile generice trebuie sa coincida in ambele parti.
@@ -440,11 +440,119 @@ parametrizata cu diferite tipuri.
 
 ### Baze de numeratie
 
+>Reprezentarea informatiei intr-un sistem de calcul se realizeaza cu ajutorul *sistemelor de numeratie* si al *codurilor*.
+>
+>Prin __sistem de numeratie__ intelegem totalitatea regulilor de reprezentare a numerelor cu ajutorul unor simboluri numite cifre.
+>Sistemele de numeratie se clasifica in:
+>- pozitionale (de exemplu: sistemele binar, zecimal, hexazecimal);
+>- nepozitionale (de exemplu: sistemul roman).
+> 
+>In sistemele de calcul se folosesc sistemele de numeratie *pozitionale* pentru reprezentarea informatiei.
+Orice sistem de numeratie pozitional este caracterizat prin numarul total de simboluri (cifre) distincte ale sistemului, denumit __baza sistemului de numeratie__.
+>
+>Exemple de sisteme de numeratie:
+>a. sistemul binar, are baza 2; cifrele sunt 0, 1;
+>b. sistemul octal, are baza 8; cifrele sunt 0, 1, 2, 3, 4, 5, 6, 7;
+>c. sistemul zecimal, are baza 10; cifrele sunt 0, 1, 2, 3, 4, 5, 6, 7, 8, 9;
+>d. sistemul hexazecimal, are baza 16; cifrele sunt 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F.
+>
+>Sistemele de calcul folosesc acele sisteme de numeratie care, prin caracteristicile lor, prezinta avantaje in ceea ce priveste realizarea circuitelor si calculelor (de exemplu: sistemul binar, octal, hexazecimal).
+
+(Bazele matematice ale sistemelor de calcul, Moise Cocan, Bogdana Pop, 2000)
+
+In Java, in mod natural reprezentam numerele in baza 10. Le mai putem reprezenta si in urmatoarele baze, astfel:
+- baza 2 (binar): 0b00110001 (numarul trebuie prefixat cu '0b' pentru a fi considerat binar);
+- baza 8 (octal): 0156 (numarul trebuie prefixat cu '0' pentru a fi considerat octal);
+- baza 16 (hexazecimal): 0xC4 (numarul trebuie prefixat cu '0x' pentru a fi considerat hexazecimal); cifrele A - F pot fi reprezentate si cu minuscule.
+
 ### Code points
+
+Glosarul Unicode specifica faptul ca orice valoare din spatiul de coduri se numeste un __codepoint__. Acestea iau valori de la 0 la 10FFFF16.
+
+In Java, un caracter (`char`) este o valoare intreaga fara semn, reprezentata pe 16 biti, adica ia valori de la 0 la FFFF.
+
+Acest lucru inseamna ca exista mai multe *codepoints* Unicode decat poate reprezenta un `char` Java. Totusi, Java trebuie sa fie in stare sa reprezinte orice text, folosind toate *codepoint*-urile Unicode.
+
+Modul in care Java rezolva aceasta problema este sa reprezinte *codepoint*-urile mai mari decat `FFFF` printr-o pereche de caractere (*code units* - un *code unit* este minimul cantitatii de informatie ce poate fi reprezentat). Aceasta pereche se numeste *pereche surogat*. Perechea surogat codifica *codepoint*-ul Unicode care este mai mare decat `FFFF` intr-o pereche de valori pe 16 biti. Aceasta implemetare foloseste ideea ca o submultime a spatiului de coduri Unicode (adica `D800` - `U+DFFF`) este rezervata pentru reprezentarea perechilor surogat.
+
+In Java, un caracter surogat este format dintr-o pereche ordonata *(high-surrogate, low-surrogate)*.
+
+- https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html
+- https://docs.oracle.com/javase/tutorial/i18n/text/characterClass.html
+- https://developers.redhat.com/blog/2019/08/16/manipulating-emojis-in-java-or-what-is-🐻-1/
 
 ### Type inference
 
+*Type inference* reprezinta abilitatea compilatorului de a-si da seama ce tip are o variabila sau un parametru, fara sa fim nevoiti sa-l declaram explicit.
+
+In Java, avem acum la dispozitie mecanisme de *type inference* in diverse locuri, introduse progresiv in noile versiuni ale limbajului.
+
+Ne uitam acum la doua exemple:
+
+#### Instantierea tipurilor generice
+
+In Java 5 au fost introduse tipurile generice. Datorita lor, putem declara, de exemplu, ce tip au elementele unei liste. Acest tip este verificat la compilare.
+
+```java
+List<String> list;
+```
+
+Totusi, trebuia sa specificam si la instantiere acest tip generic:
+
+```java
+list = new ArrayList<String>();
+```
+ 
+O data cu Java 7, nu mai suntem obligati sa specificam la instantiere tipul generic, deoarece compilatorul isi da seama din context care este acesta, uitandu-se la tipul declarat al variabilei:
+
+```java
+List<String> list = new ArrayList<>();
+``` 
+
+- https://docs.oracle.com/javase/tutorial/java/generics/genTypeInference.html
+
+#### Expresii lambda
+
+Mecanismul de *type inference* functioneaza si in cazul expresiilor lambda. De data aceasta, poate este chiar mai usor de observat ce beneficii ne aduce.
+
+Sa presupunem ca lucram la o aplicatie de tip calculator de buzunar, care trebuie sa poata efectua operatii aritmetice simple. Mai intai, am vrea sa implementam operatiile de adunare, scadere, inmultire si impartire a doua numere. Pentru aceasta, definim o metoda generala `compute`, care primeste cele doua numere si operatia pe care vrem s-o execute:
+
+```java
+double compute(double a, double b, BinaryOperation op) {
+  return op.apply(a, b);
+}
+```
+
+`BinaryOperation` este o interfata functionala pe care am definit-o noi, si arata astfel:
+
+```java
+interface BinaryOperation {
+  double apply(double a, double b);
+}
+```
+
+Acum ca am creat infrastructura, putem face operatii binare cu numere reale:
+
+```java
+compute(10, 5, (x, y) -> x + y); // am definit operatia de adunare a doua numere printr-o expresie lambda
+
+compute(1, 3, (x, y) -> x - y);
+
+compute(7, 7, (x, y) -> x * y);
+
+// bineinteles, nu e o idee buna sa definim operatia (expresia lambda) de fiecare data cand apelam metoda compute()
+// putem sa o asignam unei variabile de tip BinaryOperation
+
+BinaryOperation op = (x, y) -> x / y;
+
+compute(9, 8, op);
+```
+
+Lucrul important aici este faptul ca nu am specificat tipurile parametrilor pentru nici una dintre cele patru expresii lambda pe care le-am definit in exemplul anterior. Am putut omite tipurile tocmai datorita mecanismului de *type inference*.
+
 ### Clase anonime si expresii lambda
+
+Exemple in pachetul: `com.skytravelr.msg`
 
 ## Sesiunea 7 (26 aprilie 2020 - Skype)
 
