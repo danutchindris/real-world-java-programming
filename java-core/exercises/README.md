@@ -8,6 +8,7 @@
     * [Exercise 3 (Moving Average from Data Stream)](#exercise-3-moving-average-from-data-stream)
     * [Exercise 4 (Palindrome Permutation)](#exercise-4-palindrome-permutation)
     * [Exercise 5 (Anonymous Classes and Lambdas)](#exercise-5-anonymous-classes-and-lambdas)
+    * [Exercise 6 (The Consumer<T> Functional Interface)](#exercise-6-the-consumert-functional-interface)
 
 ## Exercise 1 (Arrays, Strings)
 
