@@ -8,7 +8,7 @@
     * [Exercise 3 (Moving Average from Data Stream)](#exercise-3-moving-average-from-data-stream)
     * [Exercise 4 (Palindrome Permutation)](#exercise-4-palindrome-permutation)
     * [Exercise 5 (Anonymous Classes and Lambdas)](#exercise-5-anonymous-classes-and-lambdas)
-    * [Exercise 6 (The Consumer<T> Functional Interface)](#exercise-6-the-consumert-functional-interface)
+    * [Exercise 6 (The Consumer Functional Interface)](#exercise-6-the-consumer-functional-interface)
 
 ## Exercise 1 (Arrays, Strings)
 
@@ -232,7 +232,7 @@ pe disc pana la radacina proiectului creat la pasul anterior.
    Decomenteaza liniile comentate din aceasta clasa de test si ruleaza testele unitare fie din IDE, fie
    din linie de comanda, cu ajutorul comenzii `mvn test`.
 
-## Exercise 6 (The Consumer<T> Functional Interface)
+## Exercise 6 (The Consumer Functional Interface)
 
 ### Context
 
