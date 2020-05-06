@@ -190,9 +190,17 @@
 - https://akoutmos.com
 - https://gigalixir.readthedocs.io/en/latest/main.html
 - https://gigalixir.com
+- http://dev.af83.io/2013/06/25/elixir-kaigi.html
+- https://speakerdeck.com/plataformatec/elixir
+- https://www.evanmiller.org/elixir-ram-and-the-template-of-doom.html
+- https://thoughtbot.com/blog/how-we-replaced-react-with-phoenix
 
 ### Erlang
 - https://blog.stenmans.org/theBeamBook/
+- https://fau.re/blog/20120710_erlang_string_concat.html
+- https://prog21.dadgum.com/70.html
+- http://dev.af83.io/2012/01/16/erlang-iolist.html
+
 
 ### Event Storming & Domain-Driven Design
 - https://blog.redelastic.com/corporate-arts-crafts-modelling-reactive-systems-with-event-storming-73c6236f5dd7
