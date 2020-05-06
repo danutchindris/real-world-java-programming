@@ -10,6 +10,7 @@
     * [Sesiunea 5 (4 aprilie 2020 - Skype)](#sesiunea-5-4-aprilie-2020---skype)
     * [Sesiunea 6 (12 aprilie 2020 - Skype)](#sesiunea-6-12-aprilie-2020---skype)
     * [Sesiunea 7 (26 aprilie 2020 - Skype)](#sesiunea-7-26-aprilie-2020---skype)
+    * [Sesiunea 8 (2 mai 2020 - Skype)](#sesiunea-8-2-mai-2020---skype)
 
 ## Sesiunea 1 (7 martie 2020)
 
@@ -686,3 +687,24 @@ Mai mult, e exact semnatura metodei abstracte `accept` din `Consumer<String>`.
 De aceea, putem substitui expresia lambda prin numele metodei.
 Atentie, nu substituim expresia lambda cu apelul metodei, ci cu numele ei; fiindca apelul metodei da ca rezultat un `void`, dar noi avem nevoie de o functie de la `String` la `void` aici.
 Adica avem nevoie de comportamentul functiei, nu de rezultatul aplicarii ei.
+
+## Sesiunea 8 (2 mai 2020 - Skype)
+
+### Functii matematice
+
+```
+f: A -> B
+```
+
+Daca `f` este o functie de la `A` la `B`, atunci se mai spune ca `f` este __o aplicatie__ de la `A` la `B`.
+
+In matematica, in particular in teoria categoriilor, un *morfism* este o mapare ce pastreaza structura, de la o structura matematica, la alta, de acelasi fel. Notiunea de morfism apare din nou si din nou in mare parte din matematica actuala. In teoria multimilor, morfismele sunt functii.
+
+In general, cuvantul morfologie se refera la forma exterioara si structura interna a lucrurilor.
+
+Am putea pune ca o functie este o mapare sau o transformare. Functia trebuie sa primeasca un argument si sa returneze rezultatul aplicarii ei.
+
+### Bibliografie
+
+- Matematica, Manual pentru clasa a IX-a, Mircea Ganga, Editura Mathpress, 2008, pagina 88
+- https://en.wikipedia.org/wiki/Morphism
