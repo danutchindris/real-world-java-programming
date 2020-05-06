@@ -8,7 +8,7 @@ public class TransformerFunctions {
 
     static Transformer<String> toStringLambda = msg -> msg.toString();
 
-    // toStringMethodRef = ...
+    static Transformer<String> toStringMethodRef = Message::toString;
 
     static Transformer<SMS> toSMSLambda = msg -> new SMS(msg.text, "Me", "You");
 
