@@ -11,6 +11,7 @@
     * [Sesiunea 6 (12 aprilie 2020 - Skype)](#sesiunea-6-12-aprilie-2020---skype)
     * [Sesiunea 7 (26 aprilie 2020 - Skype)](#sesiunea-7-26-aprilie-2020---skype)
     * [Sesiunea 8 (2 mai 2020 - Skype)](#sesiunea-8-2-mai-2020---skype)
+    * [Sesiunea 9 (10 mai 2020 - Skype)](#sesiunea-9-10-mai-2020---skype)
 
 ## Sesiunea 1 (7 martie 2020)
 
@@ -708,3 +709,13 @@ Am putea pune ca o functie este o mapare sau o transformare. Functia trebuie sa 
 
 - Matematica, Manual pentru clasa a IX-a, Mircea Ganga, Editura Mathpress, 2008, pagina 88
 - https://en.wikipedia.org/wiki/Morphism
+
+## Sesiunea 9 (10 mai 2020 - Skype)
+
+In Java, modelam functii cu ajutorul expresiilor lambda. Aparitia expresiilor lambda nu inseamna ca acum putem face lucruri pe care nu le puteam face inainte. Expresiile lambda ne ajuta sa ne construim un model mental mai clar si sa introducem un nivel de abstractizare in designul algoritmilor nostri.
+
+Atunci cand definim o expresie lambda si o transmitem ca parametru unei metode, trebuie sa ne aducem aminte ca, de fapt, transmitem comportamentul definit de lambda; nu transmitem aplicarea expresiei. Aplicarea efectiva se va face mai tarziu, cand e nevoie de ea.
+
+Astfel, putem privi functiile definite prin intermediul expresiilor lambda ca pe un nou tip de date, asa cum priveam pana acum celelalte valori.
+
+De aceea, putem crea metode care primesc ca parametri functii sau care returneaza functii, la fel cum am face cu orice tip de date.
