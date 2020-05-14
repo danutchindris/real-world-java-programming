@@ -391,7 +391,7 @@ Sa presupunem ca avem un *array* de elemente, referentiat prin variabila *xs*. P
 Stream.of(xs).allMatch(x -> x > 0)
 ```
 
-Expresia lambda pe care am scris-o ia un element `x` si verifica daca este pozitiv. Metoda `allMatch()` va aplica expresia lambda fiecarui element. De fapt, o va aplica doar cat este necesar pentru a determina rezultatul final. In exemplul, anterior, daca intalneste un numar negativ se opreste, fiindca stie ca rezultatul final va fi `false`.
+Expresia lambda pe care am scris-o ia un element `x` si verifica daca este pozitiv. Metoda `allMatch()` va aplica expresia lambda fiecarui element. De fapt, o va aplica doar cat este necesar pentru a determina rezultatul final. In exemplul anterior, daca intalneste un numar negativ se opreste, fiindca stie ca rezultatul final va fi `false`.
 
 2. In acelasi mod, verifica daca toate numerele din *array* sunt numere prime. Pentru a nu complica expresia lambda cu prea mult cod, verificarea daca un numar este prim ar trebui facuta intr-o metoda separata, cu semnatura `boolean isPrime(Integer x)`.
 
@@ -416,10 +416,8 @@ Atunci cand vrem sa verificam daca exista vreun element intr-o colectie care res
 
 2. Predicatul este un concept din logica matematica, si are urmatoarea definitie:
 
->Se numeste __predicat__ (sau __propozitie cu variabile__) un enunt care contine una sau mai multe variabile carora, atribuindu-le "valori", obtinem propozitii adevarate sau false. 
+>Se numeste __predicat__ (sau __propozitie cu variabile__) un enunt care contine una sau mai multe variabile carora atribuindu-le "valori", obtinem propozitii adevarate sau false. 
 
 3. In Java, un predicat este modelat cu ajutorul interfetei functionale `Predicate<T>`. [Documentatia](https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html) descrie faptul ca interfata expune o singura metoda abstracta, `boolean test(T t)`. Tot ce face un predicat este sa aplice metoda `test()` unui obiect de tip `T` si sa returneze un `boolean`, care spune daca obiectul respecta sau nu conditiile descrise in metoda.
 
-4. *Stream*-urile sunt *lazy*. Folosim *stream* pentru a parcurge o colectie fiindca putem inlantui mai multe operatii, dar acestea nu sunt aplicate imediat. Mai mult, acestea sunt aplicate toate deodata, parcurgand colectia o singura data. De accea, lucrul cu *stream*-uri este foarte eficient.
-
-5. Foloseste [documentatia](https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html) pentru a invata cum se folosesc metodele `anyMatch()` si `allMatch()`.
+4. *Stream*-urile sunt *lazy*. Folosim *stream* pentru a parcurge o colectie fiindca putem inlantui mai multe operatii, dar acestea nu sunt aplicate imediat. Mai mult, acestea sunt aplicate toate deodata, parcurgand colectia o singura data. De aceea, lucrul cu *stream*-uri este foarte eficient.
