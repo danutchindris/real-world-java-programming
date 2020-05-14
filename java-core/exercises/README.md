@@ -9,6 +9,7 @@
     * [Exercise 4 (Palindrome Permutation)](#exercise-4-palindrome-permutation)
     * [Exercise 5 (Anonymous Classes and Lambdas)](#exercise-5-anonymous-classes-and-lambdas)
     * [Exercise 6 (The Consumer Functional Interface)](#exercise-6-the-consumer-functional-interface)
+    * [Exercise 7 (The Supplier Functional Interface)](#exercise-7-the-supplier-functional-interface)
 
 ## Exercise 1 (Arrays, Strings)
 
@@ -366,3 +367,59 @@ static void generate(List<Article>, Consumer<Article> reporter) {
 ```
 
 Nota: desi designul propus nu prea respecta unele principii despre care am discutat pana acum (faptul ca o metoda ar trebui sa returneze, pe cat posibil, o valoare si nu un `void`), scopul exercitiului este sa ne obisnuim sa lucram cu `Consumer<T>`, care este o interfata pe care o folosim pentru efectele ei; in cazul nostru, efectul ar fi afisarea pe ecran.
+
+## Exercise 7 (Streams)
+
+Un *stream* este o secventa de elemente care poate fi procesata secvential sau in paralel, prin operatii agregate (adica putem compune mai multe operatii si sa aplicam operatia rezultata, parcurgand colectia o singura data).
+
+Sa presupunem ca avem un *array* de elemente, referentiat prin variabila *xs*. Putem obtine un *stream*, apeland metoda statica `Stream.of(xs)`.
+
+### Exercitiu 1 (parcurgere Stream)
+
+1. Construieste un *array* cu elemente de tip `Integer` (`Integer[] xs`).
+2. Construieste un *stream* cu ajutorul metodei `Stream.of()`, pornind de la acel *array*.
+3. Parcurge elementele cu ajutorul *stream*-ului si afiseaza-le. Asa cum am invatat, putem face asta cu ajutorul metodei `forEach()`. In cazul nostru, tot ce trebuie sa faca metoda `forEach()` este sa primeasca un element si sa il afiseze pe ecran. 
+
+### Exercitiu 2 (Predicate)
+
+1. La fel ca la punctul anterior, lucram cu un *stream*, obtinut din *array*-ul de numere intregi. Determina daca toate numerele din array sunt numere pare. Pentru a testa fiecare numar daca este pozitiv, folosim metoda `allMatch()`. Metoda primeste ca parametru un predicat care se aplica fiecarui element din *stream*-ul nostru si returneaza o valoare de adevar.
+ Semnatura metodei este: `boolean allMatch(Predicate<? super T> predicate)`.
+ `Predicate<T>` este o interfata functionala, deci putem folosi o expresie lambda pentru a descrie un predicat.
+ De exemplu, daca vrem sa verificam ca toate numerele din *stream* sunt pozitive, putem scrie:
+ 
+```java
+Stream.of(xs).allMatch(x -> x > 0)
+```
+
+Expresia lambda pe care am scris-o ia un element `x` si verifica daca este pozitiv. Metoda `allMatch()` va aplica expresia lambda fiecarui element. De fapt, o va aplica doar cat este necesar pentru a determina rezultatul final. In exemplul, anterior, daca intalneste un numar negativ se opreste, fiindca stie ca rezultatul final va fi `false`.
+
+2. In acelasi mod, verifica daca toate numerele din *array* sunt numere prime. Pentru a nu complica expresia lambda cu prea mult cod, verificarea daca un numar este prim ar trebui facuta intr-o metoda separata, cu semnatura `boolean isPrime(Integer x)`.
+
+3. Verifica daca toate numerele din *array* sunt patrate perfecte.
+
+### Exercitiu 3 (Predicate)
+
+Atunci cand vrem sa verificam daca exista vreun element intr-o colectie care respecta o conditie, putem folosi metoda `anyMatch()`, descrisa in [documentatie](https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html#anyMatch-java.util.function.Predicate-).
+
+1. Folosind acelasi array (prin intermediul unui *stream*), verifica daca exista vreun element negativ.
+
+2. Verifica daca exista un element impar.
+
+3. Verifica daca exista un element multiplu de 10.
+
+4. Verifica daca exista un element care este numar perfect.
+
+> Un numar n se numeste numar perfect daca este egal cu suma divizorilor sai naturali mai mici ca n. De exemplu, 6 = 1 + 2 + 3 este perfect.
+
+### Observatii
+1. Metoda `forEach()` este disponibila pe `Stream` si este descrisa in [documentatie](https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html#forEach-java.util.function.Consumer-).
+
+2. Predicatul este un concept din logica matematica, si are urmatoarea definitie:
+
+>Se numeste __predicat__ (sau __propozitie cu variabile__) un enunt care contine una sau mai multe variabile carora, atribuindu-le "valori", obtinem propozitii adevarate sau false. 
+
+3. In Java, un predicat este modelat cu ajutorul interfetei functionale `Predicate<T>`. [Documentatia](https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html) descrie faptul ca interfata expune o singura metoda abstracta, `boolean test(T t)`. Tot ce face un predicat este sa aplice metoda `test()` unui obiect de tip `T` si sa returneze un `boolean`, care spune daca obiectul respecta sau nu conditiile descrise in metoda.
+
+4. *Stream*-urile sunt *lazy*. Folosim *stream* pentru a parcurge o colectie fiindca putem inlantui mai multe operatii, dar acestea nu sunt aplicate imediat. Mai mult, acestea sunt aplicate toate deodata, parcurgand colectia o singura data. De accea, lucrul cu *stream*-uri este foarte eficient.
+
+5. Foloseste [documentatia](https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html) pentru a invata cum se folosesc metodele `anyMatch()` si `allMatch()`.
