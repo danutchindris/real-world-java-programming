@@ -9,7 +9,7 @@
     * [Exercise 4 (Palindrome Permutation)](#exercise-4-palindrome-permutation)
     * [Exercise 5 (Anonymous Classes and Lambdas)](#exercise-5-anonymous-classes-and-lambdas)
     * [Exercise 6 (The Consumer Functional Interface)](#exercise-6-the-consumer-functional-interface)
-    * [Exercise 7 (The Supplier Functional Interface)](#exercise-7-the-supplier-functional-interface)
+    * [Exercise 7 (Streams)](#exercise-7-streams)
 
 ## Exercise 1 (Arrays, Strings)
 
