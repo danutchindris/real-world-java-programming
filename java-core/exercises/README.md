@@ -10,6 +10,7 @@
     * [Exercise 5 (Anonymous Classes and Lambdas)](#exercise-5-anonymous-classes-and-lambdas)
     * [Exercise 6 (The Consumer Functional Interface)](#exercise-6-the-consumer-functional-interface)
     * [Exercise 7 (Streams)](#exercise-7-streams)
+    * [Exercise 8 (JDBC)](#exercise-8-jdbc)
 
 ## Exercise 1 (Arrays, Strings)
 
@@ -421,3 +422,15 @@ Atunci cand vrem sa verificam daca exista vreun element intr-o colectie care res
 3. In Java, un predicat este modelat cu ajutorul interfetei functionale `Predicate<T>`. [Documentatia](https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html) descrie faptul ca interfata expune o singura metoda abstracta, `boolean test(T t)`. Tot ce face un predicat este sa aplice metoda `test()` unui obiect de tip `T` si sa returneze un `boolean`, care spune daca obiectul respecta sau nu conditiile descrise in metoda.
 
 4. *Stream*-urile sunt *lazy*. Folosim *stream* pentru a parcurge o colectie fiindca putem inlantui mai multe operatii, dar acestea nu sunt aplicate imediat. Mai mult, acestea sunt aplicate toate deodata, parcurgand colectia o singura data. De aceea, lucrul cu *stream*-uri este foarte eficient.
+
+## Exercise 8 (JDBC)
+
+Submodulul `jdbc` din modulul `java-core` contine clasa `com.skytravelr.db.DbConnection`. Aici am definit metode pentru inserarea si stergerea unei inregistrari.
+
+1. Implementeaza o metoda `updateRecord()` prin care se actualizeaza o inregistrare. Metoda primeste ca parametri o referinta la un obiect de tip `Connection`, un *query string* si o structura de date (lista, map etc.) cu parametri, ce reprezinta coloanele ce trebuie actualizate si valorile lor.
+
+2. Imbunatateste metodele `insertRecord()` si `deleteRecord()`, astfel incat parametrii ce sunt transmisi instructiunilor SQL sa nu mai fie *hardcodati* in interiorul metodelor. Ei trebuie sa fie transmisi ca parametri metodelor, sub forma unei structuri de date.
+
+3. Extrage intr-o metoda separata functionalitatea - implementata initial in metoda `main()` - ce tine de *query*-ul de tip *select*.
+
+4. Imbunatateste metoda `main()`, astfel incat URL-ul de conexiune la baza de date sa nu mai fie *hardcodat* in interiorul metodei, ci sa fie transmis sub forma de *command line argument* (accesibil prin parametrul `String[] args` al metodei). Eventual, partile ce compun URL-ul pot fi preluate ca parametri separati. De exemplu, tipul bazei de date, host, port, numele bazei de date, user, parola, parametri optionali.

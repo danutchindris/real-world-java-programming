@@ -11,6 +11,7 @@
 
     <modules>
         <module>exercises</module>
+        <module>jdbc</module>
         <module>lambda</module>
         <module>optional</module>
     </modules>

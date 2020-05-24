@@ -12,6 +12,7 @@
     * [Sesiunea 7 (26 aprilie 2020 - Skype)](#sesiunea-7-26-aprilie-2020---skype)
     * [Sesiunea 8 (2 mai 2020 - Skype)](#sesiunea-8-2-mai-2020---skype)
     * [Sesiunea 9 (10 mai 2020 - Skype)](#sesiunea-9-10-mai-2020---skype)
+    * [Sesiunea 10 (24 mai 2020 - Skype)](#sesiunea-10-24-mai-2020---skype)
 
 ## Sesiunea 1 (7 martie 2020)
 
@@ -719,3 +720,10 @@ Atunci cand definim o expresie lambda si o transmitem ca parametru unei metode, 
 Astfel, putem privi functiile definite prin intermediul expresiilor lambda ca pe un nou tip de date, asa cum priveam pana acum celelalte valori.
 
 De aceea, putem crea metode care primesc ca parametri functii sau care returneaza functii, la fel cum am face cu orice tip de date.
+
+## Sesiunea 10 (24 mai 2020 - Skype)
+
+- https://owasp.org/www-project-top-ten/
+- URI - Uniform Resource Identifier: https://en.wikipedia.org/wiki/Uniform_Resource_Identifier
+- URL - Uniform Resource Locator: https://en.wikipedia.org/wiki/URL
+- https://www.vogella.com/tutorials/MySQLJava/article.html
