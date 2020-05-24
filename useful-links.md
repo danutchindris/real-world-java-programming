@@ -194,6 +194,7 @@
 - https://speakerdeck.com/plataformatec/elixir
 - https://www.evanmiller.org/elixir-ram-and-the-template-of-doom.html
 - https://thoughtbot.com/blog/how-we-replaced-react-with-phoenix
+- https://akoutmos.com/post/phoenix_live_dashboard/
 
 ### Erlang
 - https://blog.stenmans.org/theBeamBook/
