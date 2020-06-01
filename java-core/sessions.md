@@ -13,6 +13,7 @@
     * [Sesiunea 8 (2 mai 2020 - Skype)](#sesiunea-8-2-mai-2020---skype)
     * [Sesiunea 9 (10 mai 2020 - Skype)](#sesiunea-9-10-mai-2020---skype)
     * [Sesiunea 10 (24 mai 2020 - Skype)](#sesiunea-10-24-mai-2020---skype)
+    * [Sesiunea 11 (31 mai 2020 - Skype)](#sesiunea-11-31-mai-2020---skype)
 
 ## Sesiunea 1 (7 martie 2020)
 
@@ -727,3 +728,11 @@ De aceea, putem crea metode care primesc ca parametri functii sau care returneaz
 - URI - Uniform Resource Identifier: https://en.wikipedia.org/wiki/Uniform_Resource_Identifier
 - URL - Uniform Resource Locator: https://en.wikipedia.org/wiki/URL
 - https://www.vogella.com/tutorials/MySQLJava/article.html
+
+## Sesiunea 11 (31 mai 2020 - Skype)
+
+- Thymeleaf: https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html
+- Thymeleaf + Spring: https://www.thymeleaf.org/doc/tutorials/3.0/thymeleafspring.html
+- Thymeleaf Interactive Tutorial: http://itutorial.thymeleaf.org/
+- Spring Boot + Thymeleaf Hello World Example: https://mkyong.com/spring-boot/spring-boot-hello-world-example-thymeleaf/
+- Model, ModelAndView, ModelMap: https://www.baeldung.com/spring-mvc-model-model-map-model-view

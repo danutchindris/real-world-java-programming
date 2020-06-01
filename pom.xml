@@ -12,6 +12,7 @@
 
     <modules>
         <module>java-core</module>
+        <module>java-spring</module>
     </modules>
 
     <properties>

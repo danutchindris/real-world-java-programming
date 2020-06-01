@@ -434,3 +434,15 @@ Submodulul `jdbc` din modulul `java-core` contine clasa `com.skytravelr.db.DbCon
 3. Extrage intr-o metoda separata functionalitatea - implementata initial in metoda `main()` - ce tine de *query*-ul de tip *select*.
 
 4. Imbunatateste metoda `main()`, astfel incat URL-ul de conexiune la baza de date sa nu mai fie *hardcodat* in interiorul metodei, ci sa fie transmis sub forma de *command line argument* (accesibil prin parametrul `String[] args` al metodei). Eventual, partile ce compun URL-ul pot fi preluate ca parametri separati. De exemplu, tipul bazei de date, host, port, numele bazei de date, user, parola, parametri optionali.
+
+## Exercise 9 (Spring Boot MVC + JPA + Thymeleaf)
+
+1. Analizeaza *requirement*-urile din fisierul `readme.md` aflat in folderul radacina al proiectului `dealership` si identifica proprietatile ce lipsesc momentan din clasa `Car`. Adauga proprietatile si mapeaza-le, cu ajutorul anotatiilor JPA, la coloane din tabela `car`.
+
+2. Modeleaza o clasa noua pentru conceptul de *customer*.
+
+3. Ce alte entitati vor mai fi implicate in proiect? Incearca sa le identifici si sa le modelezi.
+
+Observatii:
+- Inainte sa pornesti prima data aplicatia, creeaza baza de date `dealership` folosind MySQL Workbench.
+- Actualizeaza datele de conexiune la baza de date, editand fisierul `application.properties`. Asigura-te ca portul din URL-ul de conexine este 3306 (sau portul pe care ruleaza serverul tau MySQL). Actualizeaza user-ul si parola.
