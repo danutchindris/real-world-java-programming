@@ -11,6 +11,7 @@
     * [Exercise 6 (The Consumer Functional Interface)](#exercise-6-the-consumer-functional-interface)
     * [Exercise 7 (Streams)](#exercise-7-streams)
     * [Exercise 8 (JDBC)](#exercise-8-jdbc)
+    * [Exercise 9 (Spring Boot MVC + JPA + Thymeleaf)](#exercise-9-spring-boot-mvc--jpa--thymeleaf)
 
 ## Exercise 1 (Arrays, Strings)
 
