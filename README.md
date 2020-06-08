@@ -15,8 +15,9 @@
 
 ### Alte obiective:
 - Git, Git Flow
+- API-uri (REST, gRPC, GraphQL)
 - testare unitara (JUnit, Mockito, JaCoCo)
-- arhitecturi bazate pe microservicii (Spring Boot)
+- arhitecturi bazate pe microservicii (Spring Boot, Lightbend Lagom)
 - deployment (Docker, Kubernetes, Apache Mesos, Puppet, Vagrant)
 - procesare big data (Apache Spark)
 - monitorizare (Graphite, Grafana)
