@@ -195,6 +195,16 @@
 - https://www.evanmiller.org/elixir-ram-and-the-template-of-doom.html
 - https://thoughtbot.com/blog/how-we-replaced-react-with-phoenix
 - https://akoutmos.com/post/phoenix_live_dashboard/
+- http://blog.plataformatec.com.br/2014/09/writing-assertive-code-with-elixir/
+- https://devhints.io/phoenix-routing
+- https://joyofelixir.com/toc.html
+- https://vimeo.com/channels/elixir/105526425
+- https://medium.com/@mrjoelkemp/jvm-struggles-and-the-beam-4d9c58547410
+- https://elviovicosa.com/2019/03/29/5-reasons-elixir-competitive-advantage.html
+- https://dockyard.com/blog/2020/05/28/scaling-up-with-elixir
+- https://www.phoenixframework.org/blog/the-road-to-2-million-websocket-connections
+- https://kolosek.com/elixir-basic-api-guide/
+- https://thoughtbot.com/blog/building-a-phoenix-json-api
 
 ### Erlang
 - https://blog.stenmans.org/theBeamBook/
