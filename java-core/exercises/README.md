@@ -12,6 +12,7 @@
     * [Exercise 7 (Streams)](#exercise-7-streams)
     * [Exercise 8 (JDBC)](#exercise-8-jdbc)
     * [Exercise 9 (Spring Boot MVC + JPA + Thymeleaf)](#exercise-9-spring-boot-mvc--jpa--thymeleaf)
+    * [Exercise 10 (Exceptions)](#exercise-10-exceptions)
 
 ## Exercise 1 (Arrays, Strings)
 
@@ -447,3 +448,33 @@ Submodulul `jdbc` din modulul `java-core` contine clasa `com.skytravelr.db.DbCon
 Observatii:
 - Inainte sa pornesti prima data aplicatia, creeaza baza de date `dealership` folosind MySQL Workbench.
 - Actualizeaza datele de conexiune la baza de date, editand fisierul `application.properties`. Asigura-te ca portul din URL-ul de conexine este 3306 (sau portul pe care ruleaza serverul tau MySQL). Actualizeaza user-ul si parola.
+
+## Exercise 10 (Exceptions)
+
+### Problema
+
+Scrie o aplicatie simpla care simuleaza cateva functionalitati pentru un cos de cumparaturi:
+- avem clasa `ShoppingCart`, care expune cateva proprietati: `name`, `createdAt` etc; `createdAt` ar trebui sa aiba tipul `java.time.Instant`
+- clasa `ShoppingCart` are o relatie de agregare cu clasa `Item`; pot exista mai multi itemi intr-un cos de cumparaturi, asa ca vom folosi o clasa potrivita pentru a "tine" colectia de itemi
+- avem clasa `Item`, care expune cateva proprietati: `name`, `description`, `price`, `quantity`; foloseste tipurile de date potrivite pentru fiecare proprietate (de exemplu, foloseste pentru `price` tipul `BigDecimal`)
+- `ShoppingCart` va avea o metoda care calculeaza totalul cosului de cumparaturi; metoda ar putea fi numita `calculateTotal()`; nu memora totalul intr-o proprietate a clasei, el trebuie calculat la fiecare apel al metodei
+- `ShoppingCart` va avea o metoda, `generateReport()`, ce returneaza un `String` care contine numele itemilor, concatenate cu preturile si cantitatile, intr-un format usor de citit pentru fiintele umane :) (daca afisam acel `String` cu `System.out.println()`, output-ul de pe ecran ar trebui sa fie usor de inteles si frumos formatat)
+- in plus, `ShoppingCart` trebuie sa aiba metodele:
+    - `addItem()`, ce primeste ca parametru un obiect de tip `Item`; metoda va returna un `boolean`, ce denota faptul ca adaugarea s-a efectuat cu succes; obiectul `Item` primit ca parametru va fi validat (numele trebuie sa fie diferit de `null` si "empty", pretul trebuie sa fie mai mare decat 0 etc.); in cazul in care validarea "pica", metoda va arunca o exceptie, fie `IllegalArgumentException`, fie ContextedRuntimeException (din biblioteca [Apache Commons Lang 3](https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/exception/ContextedRuntimeException.html)); recomand a doua varianta; exceptia trebuie sa contina un mesaj relevant
+    - `removeItem(Item item)`; metoda elimina din cos itemul specificat ca parametru; daca nu exista in cos, trebuie aruncata o exceptie, la fel ca la `addItem()`; exceptia trebuie sa contina un mesaj relevant
+    - `removeItem(Item item, Integer... quantity)`, care se comporta la fel ca varianta anterioara (`removeItem()` este o metoda "overloaded"), atata ca ne permitem sa scadem din cos doar cantitatea specificata a unui item existent; daca `quantity` depaseste cantitatea existenta in cos, metoda trebuie sa arunce o exceptie
+    - `updateQuantity(Item item, Integer quantity)`, care actualizeaza cantitatea unui item existent in cos, cu noua cantitate; bineinteles, arunca o exceptie daca nu exista itemul in cos
+    - putem scrie metoda `removeItem(Item item, Integer... quantity)` folosindu-ne de metoda `updateQuantity()`? 
+- scrie un program `main()` are creeaza un obiect de tip `ShoppingCart` si adauga, sterge, actualizeaza itemi, calculeaza totalul, genereaza raportul, in functie de alegerea utilizatorului dintr-un meniu "text based" (folosim instructiunea `switch` pentru construirea meniului)
+- scrie teste unitare pentru metodele publice ale clasei `ShoppingCart`; simuleaza situatiile in care ar trebui sa se arunce exceptii si marcheaza-le in testul unitar cu atributul `expected` (de exemplu, putem marca o metoda de test cu `@Test(expected = ContextedRuntimeException.class)`)
+
+### Criterii de validare
+
+- codul respecta conventiile de nume (nume de clase, nume de variabile etc.)
+- clasele au design potrivit, sunt respectate principiile OOP (de exemplu, proprietatile private promoveaza incapsularea etc.)
+- getteri si setteri
+- metodele comune sunt implementate (`equals()`, `hashCode()`, `toString()`)
+- obiectele sunt create corect, cu ajutorul constructorilor potriviti
+- clasa ce contine metoda `main()` sa fie separata de restul algoritmilor programului
+- testele unitare relevante sunt implementate
+- "program againt interfaces, not implementations"
